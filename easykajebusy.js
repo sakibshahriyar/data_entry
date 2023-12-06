@@ -12,11 +12,11 @@ function remove3DigitNumbers(inputFilePath, outputFilePath) {
     // Write the modified content back to the output file
     fs.writeFileSync(outputFilePath, modifiedContent, 'utf8');
 
-    console.log('3-digit numbers followed by dot and space removed successfully.');
+    console.log('successfully done . Buy me a Coffee');
 }
 
 // Replace 'input.txt' and 'output.txt' with your file paths
-const inputFilePath = '191358 male - Copy.txt';
+const inputFilePath = 'input.txt';
 const outputFilePath = 'output.txt';
 
 remove3DigitNumbers(inputFilePath, outputFilePath);
