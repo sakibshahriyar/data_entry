@@ -1,0 +1,25 @@
+const fs = require('fs');
+
+try {
+    const row = fs.readFileSync('data.txt', 'utf8');
+
+    const list = row.split('###');
+    let lineNumber = 1;
+
+    for (const res of list) {
+        const resLines = res.split('\n').filter(line => line.trim() !== '');
+        const count = resLines.length;
+
+        if (count !== 7) {
+            console.error(`Error at line ${lineNumber}: === ${resLines[0]} --- ${count}`);
+            process.exit(1); // Exit with an error code
+        }
+
+        lineNumber += count;
+    }
+
+    console.log('Script executed successfully.');
+} catch (error) {
+    console.error(`Error: ${error.message}`);
+    process.exit(1); // Exit with an error code
+}
